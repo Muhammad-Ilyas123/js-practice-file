@@ -1,0 +1,116 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg , #b2282d , #6c3075);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main{
+    height: 60%;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+
+.player1div{
+    height: 100%;
+    width: 50%;
+    background-color: #d3a5b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.player2div{
+    height: 100%;
+    width: 50%;
+    background-color: #a66c92;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h3{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+.currentScoreplayer1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentScoreplayer2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centerArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    gap: 30px;
+}
+
+.centerAreaBottompart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageDiv img{
+    height: 80px;
+    width: 80px;
+}
+
+button{
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+}
+
+
+.currentScoreplayer2{
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flexa;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentScoreplayer1{
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flexa;
+    align-items: center;
+    justify-content: center;
+}

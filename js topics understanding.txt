@@ -1,0 +1,110 @@
+nullish operator & OR Operator.
+
+OR Operator ?? : ye sirf null or undefined ko b or is k elawa sari falsy value ko b check karta hai.
+nullish Operator ?? : ye sirf null or undefined ko hi check karta hai.
+
+
+OR Assignment operator : ||= ==> ye sirf null or undefined ko b or is k elawa sari falsy value ko b check karta hai. agr ye true hota hai tw apni marzi ki value phr hm assign karte hai variable ko.
+
+AND Assignment operator : &&= ==> AGR KISI VARIABLE MAI TRUTY VALUE STROE HAI TW PHR YE DOSRI VALUE STORE KARDEGA VARIABLE MAI JESE:
+
+LET A = TRUE;
+A &&= FALSE;
+
+YE A MAI TRUTY VALUE STORE HAI TW YE AB IS MAI FALSE STORE KARDEGA.
+code:
+
+OR Assignment operator : ||= ==> AGR KISI VARIABLE MAI FALSY VALUE STROE HAI TW PHR YE DOSRI VALUE STORE KARDEGA VARIABLE MAI JESE:
+
+LET A = FALSE;
+A ||= TRUE;
+
+
+LET B = "ILYAS";
+A ||= "HUSSAIN";
+
+YE A MAI FALSY VALUE STORE HAI TW YE AB IS MAI TRUE STORE KARDEGA.
+YE B MAI TRUE VALUE STORE HAI TW YE AB IS MAI "HUSSAIN" STORE NH KARDEGA.
+
+
+
+Nullish Assignment operator : ??= ==> ye sari falsy value ko check nh karta sirf null or undefine ko check karta hai baki ko skip kar deta hai.
+LET A = FALSE;
+A ??= TRUE;
+
+
+LET B = null;
+A ||= "HUSSAIN";
+
+
+YE A MAI FALSY VALUE STORE HAI TW YE AB IS MAI false hi dega q k ye null or undefine check karta hai.
+YE B MAI b falsy VALUE STORE HAI TW YE AB IS MAI "HUSSAIN" STORE KARDEGA q k ye sirf null or undefine ko check karta hai.
+
+
+rest operator : ye hm data ko merge karne k liye likhte hai.
+spread operator : ye hm data ko kholne k liye use karte hai.
+destructing : isko hm hamare array ya object se data nikalne k liye use karte hai.
+this : ye depend karta hai k use kese hwa. agr ye function key word se k andar use hota hai tw apne parent ki value leta hai or agr arrow function se bane hwe function mai use hota hai tw apne parent k b parent se value utha tha hai. by default this agr use strict mai na ho tw wo window ko le k ata hai.
+apply call bind : ye 3no ka concept this se hi related hai missal k tor pe. apne aik object banaya or us object mai aik method banaya hobby ka us mai apne function lagaya or us function mai us k hi object ki koe property this se a rahi hai. or phr ap us object ki wo property ko access kar k kisi variable mai assign karte hai tw is surat mai us property mai jo this se value ati hai wo nh aye gi assign variable mai. tw is surat mai call apply or bind ka use hota hai.
+
+For Example:
+
+let myObject = {
+    name : "M.Ilyas",
+    getName : function (){
+        console.log(this.name);
+    }
+};
+
+let valueOfMyObject = myObject.getName;
+
+valueOfMyObject.apply(myObject)
+
+apply mai jo function method k argument hote hai us ko alag alag likht hai or call mai aik array mai band kar k parameter mai value deta hai.
+
+customize promise:  ===> promise aik constructor hai or aik higherOrder function b. ==> jb constructor ho tw is ka syntax new se shoro hoga or higherOrder hai tw aik call back lega. us call back mai do parameter leta hai resolve or reject.
+
+let variable = new Promis((resolve , reject) => {resolve , reject})
+
+resolve hoga tw .then mai value aye gi or reject hoga tw .catch mai value aye gi.
+
+
+const myPromise = new Promise(function (resolve , reject) {
+    let randomNum = Math.random();
+    console.log(randomNum);
+    setTimeout(() => {
+        if(randomNum > 0.5){
+        resolve(console.log("Passed"))
+    }else{
+        reject(console.log("fail"))
+    }
+    } , 5000)
+})
+
+
+myPromise.then(res => res).catch(err => err);
+
+
+
+api call karne k liye fetch method:
+
+fetch aik method hai jo api k data ko lane k liye apne andar parenthesis mai url leta hai or fetch promis return karta hai or promise se data lene k liye .then se data late hai lkn first .then se hame appropriate json mai data return nh hota tw again .then laga k data late hai or .then apne andar aik call back leta hai.
+
+For Example :
+
+fetch(url).then((data) => {return data.json}).then((resolve) => {console.log resolve});
+
+
+asyn await : async or await ko hm promise per lagat hai. ye api ko asani se call karne k liye hota hai.
+
+
+setTimeOut.
+setInterval.
+
+
+localStorage.get
+localStorage.set
+json.parse
+json.stringfy
+
+
