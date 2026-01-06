@@ -413,20 +413,19 @@
 function foo(param1){
     let parameterSplitedValue = param1.split("");
     
-    let num = 0;
     parameterSplitedValue.map((value) => {
-
-        let filteredValue =  parameterSplitedValue.filter((val , ind) => {
-            if(value === val){
-                parameterSplitedValue.splice(ind , 1);
-            };
-            console.log(parameterSplitedValue);
+        let counter = 0;
+        let filteredValue =  parameterSplitedValue.filter((val , ind) => { 
             
+            if(value === val){
+                counter += 1;
+                if(counter > 1){
+                    parameterSplitedValue.splice(ind , 1);
+                }
+            }
             return value === val;
         })
-        
         console.log(`value ${value} length ${filteredValue.length}`);
-
         
 })
 }
