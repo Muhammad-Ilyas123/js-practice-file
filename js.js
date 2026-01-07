@@ -409,10 +409,15 @@
 
 // console.log(names);
 
+let fooParameterValue = prompt("Kindly Provide us function parameter value").split(" ").join("");
+
 
 function foo(param1){
-    let parameterSplitedValue = param1.split("");
     
+    if(param1){
+        
+    let parameterSplitedValue = param1.toLowerCase().split("");
+    let matchedIndexNum = [];
     parameterSplitedValue.map((value) => {
         let counter = 0;
         let filteredValue =  parameterSplitedValue.filter((val , ind) => { 
@@ -420,15 +425,26 @@ function foo(param1){
             if(value === val){
                 counter += 1;
                 if(counter > 1){
-                    parameterSplitedValue.splice(ind , 1);
+                    matchedIndexNum.push(ind)
+                    parameterSplitedValue.splice(ind , 1 , "");
                 }
             }
             return value === val;
         })
+
+        parameterSplitedValue = parameterSplitedValue.filter((val) => {
+            if(matchedIndexNum.length >= 1)
+          return  val != "";
+        })
+        console.log(parameterSplitedValue);
+        
         console.log(`value ${value} length ${filteredValue.length}`);
         
 })
+    }else{
+        alert("Please Provide parameter value");
+    }
 }
 
 
-foo("javascript");
+foo(fooParameterValue);
